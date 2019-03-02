@@ -1,0 +1,80 @@
+	/*
+* @Author: Fuyuumiai
+* @Date:   2018-12-21 07:50:21
+* @Last Modified by:   Fuyuumiai
+* @Last Modified time: 2018-12-21 07:50:21
+*/
+ *{
+        		margin: 0;
+        		padding: 0;
+       	 	}
+        	ui,li{
+        		list-style: none;
+ 	       	}
+ 	       	@font-face {
+				font-family: 'icomoon';
+				src: url('../fonts/icomoon.eot?7kkyc2');
+				src: url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+				url('../fonts/icomoon.ttf?7kkyc2') format('truetype'),
+				url('../fonts/icomoon.woff?7kkyc2') format('woff'),
+				url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+				font-style: normal;
+			}
+	html,body{
+		width: 100%;
+		height: 100%;
+	}
+
+#main{
+	width: 100%;
+	height: calc(100% - 102px);
+	position: relative;
+}
+#main_left{
+	width: 260px;
+	height:100%;
+	float: left;
+}
+.left_cd{
+	width: 260px;
+	min-height: 100%;
+	margin-top: 2px;
+	float: left;
+	background-color:#D2D7DC;
+}
+.left_cd>li{
+	width: 240px;
+	font-family: "微软雅黑";
+	line-height: 50px;
+	text-align: center;
+	background-color: white;
+	position: relative;
+	border: 1px black solid;
+	box-sizing: border-box;
+	margin: 10px;
+}
+.cd_ul .cdul_li{
+	margin-top: 10px;
+}
+.cdul_li ul li{
+	width: 240px;
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #fff;
+	font-size: 14px;
+	background-color: blue;
+}
+.cd_ul .cdul_li>span{
+	text-align: right;
+	font-size: 12px;
+	position: absolute;
+	top:6%;
+	left:85%;
+	font-family: 'icomoon';
+}
+.cd_ul .cdul_li>span::before{
+	content: " \ea1c";
+}
+.cd_ul>li>ul{
+	display: none;
+}

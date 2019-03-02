@@ -1,0 +1,48 @@
+/*
+* @Author: Administrator
+* @Date:   2018-12-24 09:59:17
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-12-24 09:59:17
+*/
+*{
+    margin: 0;
+    padding: 0;
+    }
+ui,li{
+       list-style: none;
+ 	}
+@font-face {
+    	 font-family: 'icomoon';
+    	 src:  url('../fonts/icomoon.eot?7kkyc2');
+    	 src:  url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+    	 url('../fonts/icomoon.ttf?7kkyc2') format('truetype'),
+    	 url('../fonts/icomoon.woff?7kkyc2') format('woff'),
+    	 url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+    	 font-style: normal;
+    	    }
+.left_cd{
+	width: 240px;
+	height:840px;
+	margin-top:88px;
+	background-color: #000;
+}
+.cd_ul>li{
+	width: 240px;
+	font-family: "微软雅黑";
+	line-height: 50px;
+	text-align: center;
+	position: relative;
+	background-color: #6668;
+}
+.cd_ul .cdul_li{
+	margin-top: 10px;
+}
+.cdul_li ul li{
+	width: 240px;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #2229;
+	font-size: 14px;
+	background-color: blue;
+	cursor:pointer;
+}

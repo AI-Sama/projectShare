@@ -1,0 +1,108 @@
+/*
+* @Author: Administrator
+* @Date:   2018-12-24 09:36:28
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-12-24 09:36:28
+*/
+
+	 /*@font-face {*/
+	    	    	/*font-family: 'icomoon';*/
+	    	       	/*src:  url('../fonts/icomoon.eot?7kkyc2');*/
+	    	       	/*src:  url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),*/
+	    	       	/*url('../fonts/icomoon.ttf?7kkyc2') format('truetype'),*/
+	    	       	/*url('../fonts/icomoon.woff?7kkyc2') format('woff'),*/
+	    	       	/*url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');*/
+	    	       	/*font-style: normal;*/
+	    	    /*}*/
+html{
+	height: calc(100% - 122px);
+}
+body{
+	height: 100%;
+}
+.load_main{
+	width: 100%;
+	margin-top: 5px;
+	height: 100%;
+}
+.html_center{
+	width:820px;
+	height: 100%;
+	margin:0 auto;
+	margin-top: 15px;
+	border: 1px solid #666;
+	/* background-color: red; */
+	position: relative;
+}
+.load_title{
+	width: 820px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 26px;
+	border-bottom: 1px solid gray;
+}
+.load_title span{
+	display: block;
+	font-family: 'icomoon';
+	margin-left: 10px;
+}
+.load_title span::before{
+	content:"\e95d";
+}
+.load_for{
+	width: 820px;
+	height: 200px;
+	margin: auto;
+	margin-top: 1px;
+	/* background-color: red; */
+}
+.load_for tr td:first-child{
+	display: block;
+	text-align: right;
+	width: 200px;
+	height: 50px;
+	margin-left: 10px;
+	line-height: 50px;
+	margin-bottom: 10px;
+}
+.load_for input{
+	display: inline-block;
+	width: 400px;
+	height: 30px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border-radius: 4px;
+	outline: none;
+}
+.pro_fl select{
+	display: inline-block;
+	width: 405px;
+	height: 35px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border-radius: 4px;
+} 
+
+.note_rq{
+	width: 580px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: 224px;
+	position: relative;
+}
+.note_jt{
+	display: block;
+	text-align: right;
+	width: 200px;
+	height: 50px;
+	line-height: 20px;
+	/* margin-bottom: 10px; */
+	position: absolute;
+	left: -215px;
+}
+.sub_button input{
+	width: 300px;
+	height: 40px;
+	position: absolute;
+	top: 93%;left: 26%;
+}

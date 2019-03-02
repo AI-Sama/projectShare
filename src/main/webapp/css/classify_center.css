@@ -1,0 +1,135 @@
+/*
+* @Author: Fuyuumiai
+* @Date:   2018-12-21 22:43:29
+* @Last Modified by:   Fuyuumiai
+* @Last Modified time: 2018-12-21 22:43:29
+*/
+@font-face {
+    font-family: 'icomoon';
+    src:  url('/fonts/icomoon.eot?7kkyc2');
+    src:  url('/fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+    url('/fonts/icomoon.ttf?7kkyc2') format('truetype'),
+    url('/fonts/icomoon.woff?7kkyc2') format('woff'),
+    url('/fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+    font-style: normal;
+    	    }
+.main_center{
+	width: calc(100% - 260px);
+	height: calc(100% - 60px);
+	margin-top: 2px;
+	float: left;
+}
+.center_ul{
+	width: 100%;
+	height:100%;
+	position: relative;
+
+}
+.ul_li{
+	width: 22.1%;
+	height: 40%;
+	margin-left: 1.8%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	float: left;
+	/*overflow: hidden;	*/
+	border-radius: 6px;
+	box-shadow: 10px 10px 10px #adadad;
+	-webkit-box-shadow: 10px 10px 10px #adadad;
+	-moz-box-shadow: 10px 10px 10px #adadad;
+	background-color: #fff7;
+}
+.ul_li:first-child{
+	margin-left: 3%;
+}
+.ul_li:nth-child(5){
+	margin-left: 3%;
+}
+/*所有图片展示css*/
+.li_top{
+	position: relative;
+	width:100%;
+	height: 75%;
+	overflow: hidden;
+	border-radius: 6px;
+}
+.li_top a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	overflow: hidden;
+	/*background:url("../image/java.PNG") no-repeat;*/
+	transition:all 0.6s ease;
+}
+.li_top a:hover{
+	transform:scale(1.2);
+}
+
+.li_bottom{
+	width: 100%;
+	height: 25%;
+	position: relative;
+}
+.li_bottom p{
+	display: block;
+	width: 100%;
+	height: 24%;
+	margin-top: 6px;
+	line-height: 20px;
+	font-size: 0.9em;
+	font-family: 'icomoon';
+}
+.li_bottom p span{
+	width:20%;
+	height: 15%;
+	margin-left: 1%;
+	text-align: right;
+}
+.li_bottom p:first-child::before{
+	content: "\e971";
+}
+.li_bottom p:nth-child(2)::before{
+	content:"\e95c";
+}
+/*点赞样式*/
+.thumbup{
+	width: 50%;
+	height:15%;
+	position: absolute;
+	top: 60%;
+	left: 70%;
+}
+.watch_per{
+	display: inline-block;
+	width: 22%;
+	height: 15%;
+	font-family: 'icomoon';
+	font-size: 1em;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.thumb_up{
+	display: inline-block;
+	width: 22%;
+	height: 15%;
+	font-family: 'icomoon';
+	font-size: 1em;
+	line-height: 20px;
+	cursor: pointer;
+}
+.thumb_up{
+	margin-right: 2%;
+}
+.thumb_up::before{
+	content: "\e904";
+}
+
+/*翻页样式*/
+#center_bottom{
+	width: calc(100% - 290px);
+	height: 50px;
+	position: absolute;
+	bottom: 0;left: 280px;
+}

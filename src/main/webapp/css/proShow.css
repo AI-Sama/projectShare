@@ -1,0 +1,133 @@
+/*
+* @Author: Administrator
+* @Date:   2018-12-25 19:43:55
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-12-25 19:43:55
+*/
+.pro_title{
+	width: 100%;
+	height: 150px;
+	margin-top: 3px;
+	position: absolute;
+	box-shadow: 0px 0px 15px #adadad;
+	-webkit-box-shadow: 0px 0px 15px #adadad;
+	-moz-box-shadow: 0px 0px 15px #adadad;
+}
+.pro_title .title_font{
+	display:block;
+	width: 600px;
+	height: 80px;
+	line-height:80px;
+	position: absolute;
+	top:50%;left: 50%;
+	margin-left: -300px;
+	margin-top: -60px;
+	font-size:30px;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+.infor {
+	width: 500px;
+	height: 80px;
+	margin-left: 30px;
+	position: absolute;
+	left: 50%;top:50%;
+	margin-left: -180px;
+	margin-top: 40px;
+}
+.infor span{
+	display: block;
+	width: 100px;
+	height: 20px;
+	line-height: 20px;
+	font-family: 'icomoon';
+	font-size: 16px;
+}
+.infor_name{
+	position: absolute;
+}
+.infor_type{
+	position: absolute;
+	left:120px;
+}
+.infor .infor_time{
+	width: 180px;
+	position: absolute;
+	left:240px;
+}
+.infor_name::before{
+	content: "\e971";
+}
+.infor_type::before{
+	content: "\e95c";
+}
+.infor_time::before{
+	content: "\e950";
+}
+/* 项目简述 */
+.pro_main{
+	width: 100%;
+	position: absolute;
+	top:260px;
+}
+.pro_main .pro_js{
+	width: 940px;
+	margin:0 auto;
+	margin-top: 5px;
+	overflow: auto;
+	position: relative;
+
+}
+.js_title{
+	display: block;
+	width: 120px;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	float: left;
+}
+.js_char{
+	width: 820px;
+	padding-top: 10px;
+	float: right;
+	font-size: 16px;
+	text-indent: 2em;
+}
+.rule_xz{
+	width: 100%;
+	height: 30%;
+	border-top: 2px solid #666;
+}
+.pro_xz{
+	width: 110px;
+	height: 30px;
+	position: relative;
+	bottom: 20px;
+	left: 50%;
+	top:5px;
+	margin-left: -65px;	
+}
+.xz_ico{
+	display: block;
+	width: 20px;
+	height: 30px;
+	line-height: 30px;
+	font-family: 'icomoon';
+	float: left;
+	font-size: 18px;
+}
+.xz_ico::before{
+	content: "\e9c5";
+}
+.pro_xz a{
+	text-align: center;
+	display: block;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	font-size:16px;
+	color:red;
+	text-decoration: none;
+}
