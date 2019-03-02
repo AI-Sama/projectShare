@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.projectShare.mapper.ItemsMapper">
+    <resultMap id="ItemsDevelopResultMap" type="com.projectShare.Pojo.ItemsDevelop">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="Iname" property="Iname" jdbcType="VARCHAR"/>
+        <result column="Itext" property="Itext" jdbcType="VARCHAR"/>
+        <result column="upTime" property="upTime"/>
+        <result column="modifyTime" property="modifyTime"/>
+        <result column="lookNum" property="lookNum" jdbcType="INTEGER"/>
+        <result column="upUser" property="upUser" jdbcType="INTEGER"/>
+        <result column="assortmentId" property="assortmentId" jdbcType="INTEGER"/>
+        <result column="itemState" property="itemState" jdbcType="INTEGER"/>
+        <result column="goodNum" property="goodNum" jdbcType="INTEGER"/>
+        <result column="resourceSrc" property="resourceSrc" jdbcType="VARCHAR"/>
+        <result column="weight" property="weight" jdbcType="INTEGER"/>
+        <result column="mainImg" property="mainImg" jdbcType="VARCHAR"/>
+        <association property="user" javaType="com.projectShare.Pojo.User"
+                     resultMap="com.projectShare.mapper.UserMapper.UserResultMap"/>
+    </resultMap>
+    <!--插入项目数据-->
+    <insert id="insertItem" parameterType="com.projectShare.Pojo.Items">
+    insert into items(Iname,Itext,upUser,assortmentId,resourceSrc,mainImg)
+    values(#{Iname},#{Itext},#{upUser},#{assortmentId},#{resourceSrc},#{mainImg})
+    </insert>
+
+    <!--修改项目-->
+    <update id="changeItem" parameterType="com.projectShare.Pojo.Items">
+        update items set Iname=#{Iname},Itext=#{Itext},assortmentId=#{assortmentId},mainImg=#{mainImg},resourceSrc=#{resourceSrc}
+        where id=#{id}
+    </update>
+
+    <!--查找分类项目-->
+    <select id="selectItems"  resultMap="ItemsDevelopResultMap">
+      select items.*,user.* from items,user
+      where items.upUser=user.id
+      and assortmentId=#{assortmentId}
+      and itemState=1
+      order by weight desc,upTime desc
+      limit #{star},8
+    </select>
+
+    <!--查找所有待审核的项目-->
+    <select id="selectAllAuditingItems"  resultMap="ItemsDevelopResultMap">
+      select * from items where itemState=0 order by upTime desc
+    </select>
+
+    <!--删除项目-->
+    <select id="deleteItems" parameterType="java.lang.Integer" >
+     delete from items where id=#{id}
+    </select>
+
+    <!--查找全部项目数-->
+    <select id="selectCountItem" resultType="java.lang.Integer">
+      select sum(id) from items where itemState=1;
+    </select>
+
+    <!--&lt;!&ndash;根据项目id查找项目&ndash;&gt;-->
+    <!--<select id="selectItemForItemId" resultType="java.lang.Integer">-->
+      <!--select * from items where id=#{id}-->
+    <!--</select>-->
+
+    <!--根据userid查找项目-->
+    <select id="selectItemsForUser"  resultMap="ItemsDevelopResultMap">
+      select items.*,user.* from items,user
+      where items.upUser=user.id
+      and upUser=#{userId}
+      and itemState=1
+      order by weight desc,upTime desc
+      limit #{star},8
+    </select>
+
+    <!--项目审核-->
+    <update id="changeItemState" parameterType="Integer">
+      update items set itemState=#{itemState} where id=#{id}
+    </update>
+</mapper>

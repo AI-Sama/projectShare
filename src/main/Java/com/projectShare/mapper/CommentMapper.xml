@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.projectShare.mapper.CommentMapper">
+    <resultMap id="CommentResultMap" type="com.projectShare.Pojo.Comment">
+        <id column="cid" property="cid" jdbcType="INTEGER"/>
+        <result column="commentUser" property="commentUser" jdbcType="VARCHAR"/>
+        <result column="commentText" property="commentText" jdbcType="VARCHAR"/>
+        <result column="commentItem" property="commentItem" jdbcType="INTEGER"/>
+        <result column="commentTime" property="commentTime" />
+    </resultMap>
+        <!--插入一条评论数据-->
+        <insert id="insertComment" parameterType="com.projectShare.Pojo.Comment">
+          insert into comment(commentUser,commentItem,commentText) values(#{commentUser},#{commentItem},#{commentText})
+        </insert>
+
+        <!--根据项目id查找评论-->
+        <select id="selectCommentForItemID" parameterType="java.lang.Integer" resultMap="CommentResultMap">
+            select * from comment where commentItem=#{commentItem}
+        </select>
+
+        <!--根据评论cid删除评论-->
+        <delete id="deleteComment" parameterType="java.lang.Integer">
+          delete from comment where cid=#{cid}
+        </delete>
+
+
+
+
+</mapper>

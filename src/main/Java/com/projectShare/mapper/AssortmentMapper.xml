@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.projectShare.mapper.AssortmentMapper">
+    <resultMap id="assortmentResultMap" type="com.projectShare.Pojo.Assortment">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="Fname" property="fName" jdbcType="VARCHAR"/>
+        <result column="createTime" property="createTime" />
+        <result column="modifyTime" property="modifyTime" />
+    </resultMap>
+
+        <!--增加一个分类-->
+        <insert id="insertAssortment" parameterType="com.projectShare.Pojo.Assortment">
+        insert into assortment(Fname)values(#{fName});
+        </insert>
+
+         <!--修改分类-->
+        <update id="changeAssortment" parameterType="com.projectShare.Pojo.Assortment">
+         update assortment set Fname=#{fName} where id=#{id}
+        </update>
+
+        <!--刪除分类-->
+       <delete id="deleteAssortment" parameterType="com.projectShare.Pojo.Assortment">
+          delete from assortment where id=#{id}
+       </delete>
+
+       <!--查找全部分类-->
+      <select id="selectAssortment"  resultMap="assortmentResultMap">
+          select * from assortment;
+      </select>
+
+</mapper>
