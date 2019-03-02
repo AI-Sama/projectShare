@@ -82,12 +82,6 @@ public class UserController {
     }
     @RequestMapping(value = "/exitLogin", produces = {"text/html;charset=UTF-8;application/json;charset=UTF-8"})//配置方法url路径
     public ModelAndView exitLogin( HttpSession httpSession) {//退出登录
-//        if(httpSession.getAttribute("user")!=null){
-//            httpSession.removeAttribute("user");
-//            return "退出成功";
-//        }else{
-//            return "请先登录";
-//        }
         httpSession.removeAttribute("user");
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("index");
