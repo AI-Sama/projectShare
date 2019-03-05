@@ -14,8 +14,9 @@ public class LoginIntercept extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession httpSession=request.getSession();
                     User user=(User) httpSession.getAttribute("user");
+                    //登录拦截器,如果用户没有登录,就进行拦截处理
         if(user==null){
-            request.getRequestDispatcher("/userController/jumpLoginPage").forward(request,response);
+            request.getRequestDispatcher("/userController/jumpLoginPage").forward(request,response);//转发到另一个controller
             return false;
         }
         return super.preHandle(request, response, handler);

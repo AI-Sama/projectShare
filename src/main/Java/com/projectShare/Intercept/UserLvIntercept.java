@@ -12,6 +12,8 @@ public class UserLvIntercept extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession httpSession=request.getSession();
+        //权限拦截器
+        //如果用户权限不足,进行统一拦截处理
         User user=(User) httpSession.getAttribute("user");
         if(user==null||user.getUserLv()<=0){
             httpSession.setAttribute("errorMG","权限不足");

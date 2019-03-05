@@ -74,6 +74,7 @@ public class UserController {
             return "账号不存在";
         }
         if (user1.getPassword().equals(user.getPassword())) {//密码相同,登录成功
+            user1.setPassword("");
             httpSession.setAttribute("user",user1);
             return "登录成功";
         }else{
@@ -109,13 +110,13 @@ public class UserController {
 
     @RequestMapping(value = "/changeAuditingItems", produces = {"text/html;charset=UTF-8;"})//配置方法url路径
     @ResponseBody
-    public String changeAuditingItems(Integer id, HttpSession httpSession) {//修改审核显示的项目
+    public String changeAuditingItems(Integer id, HttpSession httpSession) {//修改审核项目显示的项目
         List<ItemsDevelop> itemsDevelops=(List<ItemsDevelop>) httpSession.getAttribute("items");
         String str="";
         JSONObject jsonObject=null;
         for (ItemsDevelop item:itemsDevelops
              ) {
-                if(item.getId()==id){
+                if(item.getId()==id){//如果传过来的项目id等于session里的项目id,返回这个项目
                     jsonObject=new JSONObject(item);
                     break;
                 }
